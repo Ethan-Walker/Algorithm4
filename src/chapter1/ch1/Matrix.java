@@ -2,7 +2,7 @@ package chapter1.ch1;
 
 import org.junit.Test;
 
-public class MatrixDemo {
+public class Matrix {
 
 
     public static void main(String[] args) {
@@ -21,7 +21,10 @@ public class MatrixDemo {
 
     }
 
-    static int[][] multiply(int[][] a, int[][] b) {
+    /**
+     * 矩阵相乘
+     */
+    public static int[][] multiply(int[][] a, int[][] b) {
         int row = a.length, col = b[0].length;
 
         int[][] c = new int[row][col]; // c[3][2]  a 的行数 ，b 的列数
@@ -35,6 +38,51 @@ public class MatrixDemo {
             }
         }
 
+        return c;
+    }
+
+    /**
+     * 矩阵转置
+     */
+    public static double[][] transpose(double[][] a) {
+        int newRow = a[0].length;
+        int newCol = a.length;
+
+        double[][] b = new double[newRow][newCol];
+        for (int i = 0; i < newRow; i++) {
+            for (int j = 0; j < newCol; j++) {
+                b[i][j] = a[j][i];
+            }
+        }
+        return b;
+    }
+
+    /**
+     * 向量点乘
+     */
+    public static double dot(double[] x, double[] y) {
+        double result = 0;
+        for (int i = 0; i < x.length; i++) {
+            result += x[i] * y[i];
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵和向量乘积
+     *
+     * @param a
+     * @param b
+     * @return
+     */
+    public static double[] multiply(double[][] a, double[] b) {
+        double[] c = new double[a.length];
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                c[i] += a[i][j] * b[j];
+            }
+        }
         return c;
     }
 

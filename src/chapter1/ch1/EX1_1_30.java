@@ -1,6 +1,6 @@
 package chapter1.ch1;
 
-public class EX_1_1_30 {
+public class EX1_1_30 {
     public static void main(String[] args) {
         int n = 20;
         boolean[][] a = new boolean[n][n];
