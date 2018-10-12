@@ -69,12 +69,14 @@ public class EX1_1_29 {
 
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
-            a[i] = (int) (Math.random() * (10000));  // [0,10000)之间的整数
+            a[i] = (int) (Math.random() * (100));  // [0,10000)之间的整数
         }
-        System.out.println(Arrays.toString(a));
 
         Arrays.sort(a);
+        System.out.println(Arrays.toString(a));
+
         System.out.println(smallerCount(key, a));
+        System.out.println(equalCount(key, a));
 
     }
 }
